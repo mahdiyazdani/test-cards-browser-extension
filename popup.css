@@ -1,0 +1,25 @@
+body {
+	padding: 20px;
+	width: 300px;
+}
+h1 {
+	margin-bottom: 10px;
+}
+select {
+	margin-bottom: 20px;
+}
+div {
+	background-color: lightgray;
+	cursor: pointer;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+table {
+	border-collapse: collapse;
+	display: none; /* Initially hide the table */
+	margin-top: 10px;
+}
+th, td {
+	border: 1px solid black;
+	padding: 5px;
+}
