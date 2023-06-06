@@ -1,25 +1,57 @@
 body {
-	padding: 20px;
+	background: #f0f0f1;
+	color: #3c434a;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
 	width: 300px;
+	padding: 10px 16px 30px;
 }
-h1 {
-	margin-bottom: 10px;
+h2 {
+	font-size: 14px;
+	font-weight: bold;
 }
-select {
-	margin-bottom: 20px;
-}
-div {
-	background-color: lightgray;
-	cursor: pointer;
-	margin-bottom: 10px;
-	padding: 10px;
+input, textarea, select {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #333;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 7px 12px;
+	width: 100%;
 }
 table {
-	border-collapse: collapse;
-	display: none; /* Initially hide the table */
-	margin-top: 10px;
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	border-spacing: 0;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+	clear: both;
+	color: #3c434a;
+	display: none;
+	margin: 0;
+	margin-top: 20px;
+	table-layout: fixed;
+	text-align: left;
+	width: 100%;
+	word-wrap: break-word;
 }
-th, td {
-	border: 1px solid black;
-	padding: 5px;
+table td, table th {
+	color: #50575e;
+	font-size: 13px;
+	line-height: 1.5em;
+	padding: 8px 10px;
+	vertical-align: top;
+}
+table thead th, table thead td {
+	border-bottom: 1px solid #c3c4c7;
+}
+table > tbody > :nth-child(odd) {
+	background-color: #f6f7f7;
+}
+table tbody tr {
+	cursor: pointer;
+	transition: background-color 0.1s ease-in-out;
+}
+table tbody tr:hover {
+	background-color: #e7f5fe;
 }
