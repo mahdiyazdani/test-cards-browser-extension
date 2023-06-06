@@ -1,17 +1,74 @@
 {
-  "stripe": [
-    { "label": "Visa", "number": "4242424242424242" },
-    { "label": "MasterCard", "number": "5555555555554444" },
-    { "label": "American Express", "number": "378282246310005" }
-  ],
-  "square": [
-    { "label": "Visa", "number": "4111111111111111" },
-    { "label": "MasterCard", "number": "5105105105105100" },
-    { "label": "Discover", "number": "6011111111111117" }
-  ],
-  "paypal": [
-    { "label": "Visa", "number": "4111111111111111" },
-    { "label": "MasterCard", "number": "5555555555554444" },
-    { "label": "American Express", "number": "378282246310005" }
-  ]
+	"Authorize.Net": [
+		{
+			"label": "Visa",
+			"number": "4007000000027"
+		},
+		{
+			"label": "MasterCard",
+			"number": "5424000000000015"
+		},
+		{
+			"label": "American Express",
+			"number": "370000000000002"
+		}
+	],
+	"PayPal": [
+		{
+			"label": "Visa",
+			"number": "4111111111111111"
+		},
+		{
+			"label": "MasterCard",
+			"number": "5555555555554444"
+		},
+		{
+			"label": "American Express",
+			"number": "378282246310005"
+		}
+	],
+	"Square": [
+		{
+			"label": "Visa",
+			"number": "4111111111111111"
+		},
+		{
+			"label": "MasterCard",
+			"number": "5105105105105100"
+		},
+		{
+			"label": "Discover",
+			"number": "6011111111111117"
+		}
+	],
+	"Stripe": [
+		{
+			"label": "Visa",
+			"number": "4242424242424242"
+		},
+		{
+			"label": "MasterCard",
+			"number": "5555555555554444"
+		},
+		{
+			"label": "Discover",
+			"number": "6011111111111117"
+		},
+		{
+			"label": "JCB",
+			"number": "3566002020360505"
+		},
+		{
+			"label": "Unionpay",
+			"number": "6200000000000005"
+		},
+		{
+			"label": "Diners Club",
+			"number": "30569309025904"
+		},
+		{
+			"label": "American Express",
+			"number": "378282246310005"
+		}
+	]
 }
