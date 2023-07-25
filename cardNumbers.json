@@ -70,5 +70,27 @@
 			"label": "American Express",
 			"number": "378282246310005"
 		}
+	],
+	"Paddle": [
+		{
+			"label": "Visa debit card",
+			"number": "4000056655665556"
+		},
+		{
+			"label": "Visa without 3DS",
+			"number": "4242424242424242"
+		},
+		{
+			"label": "Visa with 3DS",
+			"number": "4000003800000446"
+		},
+		{
+			"label": "Declined card",
+			"number": "4000000000000002"
+		},
+		{
+			"label": "Successful initial, subsequent declined",
+			"number": "4000002760003184"
+		}
 	]
 }
