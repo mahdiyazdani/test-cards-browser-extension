@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 	const $gatewaySelect = document.getElementById('gatewaySelect');
 	const $cardTable = document.getElementById('cardTable');
 	const $cardNumbers = document.getElementById('cardNumbers');
+	const $snackbar = document.getElementById("snackbar");
 	let data;
 
 	// Load card numbers from JSON file
@@ -9,21 +10,21 @@ document.addEventListener('DOMContentLoaded', async function () {
 		data = await loadCardNumbers();
 		// Populate the payment gateway dropdown
 		Object.keys(data).forEach(function (gateway) {
-			const option = document.createElement('option');
+			const option = document.createElement("option");
 			option.value = gateway;
 			option.textContent = gateway;
 			$gatewaySelect.appendChild(option);
 		});
 	} catch (error) {
-		console.error('Failed to load card numbers: ' + error);
+		console.error("Failed to load card numbers: " + error);
 	}
 
-	$gatewaySelect.addEventListener('change', async function () {
+	$gatewaySelect.addEventListener("change", async function () {
 		const selectedGateway = $gatewaySelect.value;
 
 		// Hide the table if no item is selected
 		if (!selectedGateway) {
-			$cardTable.style.display = 'none';
+			$cardTable.style.display = "none";
 			return;
 		}
 
@@ -40,26 +41,26 @@ document.addEventListener('DOMContentLoaded', async function () {
 				});
 
 				// Show the table
-				$cardTable.style.display = 'table';
+				$cardTable.style.display = "table";
 			} else {
 				// Hide the table if no card numbers are available
-				$cardTable.style.display = 'none';
+				$cardTable.style.display = "none";
 			}
 		} catch (error) {
-			console.error('Failed to load card numbers: ' + error);
+			console.error("Failed to load card numbers: " + error);
 		}
 	});
 
 	async function loadCardNumbers() {
-		const response = await fetch('cardNumbers.json');
+		const response = await fetch("cardNumbers.json");
 		if (!response.ok) {
-			throw new Error('Failed to load card numbers');
+			throw new Error("Failed to load card numbers");
 		}
 		return await response.json();
 	}
 
 	function clearTable() {
-		$cardNumbers.innerHTML = '';
+		$cardNumbers.innerHTML = "";
 	}
 
 	function addCardToTable(brand, number) {
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 		brandCell.textContent = brand;
 		numberCell.textContent = number;
 
-		row.addEventListener('click', function () {
+		row.addEventListener("click", function () {
 			copyToClipboard(number);
 		});
 	}
@@ -79,12 +80,20 @@ document.addEventListener('DOMContentLoaded', async function () {
 		navigator.clipboard
 			.writeText(text)
 			.then(function () {
-				console.log('Text copied to clipboard: ' + text);
-				alert('Copied to clipboard: ' + text);
-				window.close();
+				console.log("Text copied to clipboard: " + text);
+				$snackbar.textContent = "Copied to clipboard: " + text;
+				$snackbar.className = "show";
+
+				setTimeout(function () {
+					$snackbar.className = $snackbar.className.replace(
+						"show",
+						""
+					);
+					window.close();
+				}, 2000);
 			})
 			.catch(function (error) {
-				console.error('Failed to copy text to clipboard: ' + error);
+				console.error("Failed to copy text to clipboard: " + error);
 			});
 	}
 });
